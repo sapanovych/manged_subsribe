@@ -3,9 +3,9 @@
 
 ```
 terraform plan
-module.mangmet_groups_second_level["SandBox"].data.azurerm_management_group.mangment_group_id: Reading...
-module.mangmet_groups_second_level["Non_Prod"].data.azurerm_management_group.mangment_group_id: Reading...
 module.mangmet_groups_second_level["Prod"].data.azurerm_management_group.mangment_group_id: Reading...
+module.mangmet_groups_second_level["Non_Prod"].data.azurerm_management_group.mangment_group_id: Reading...
+module.mangmet_groups_second_level["SandBox"].data.azurerm_management_group.mangment_group_id: Reading...
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
@@ -60,6 +60,60 @@ Terraform planned the following actions, but then encountered a problem:
       + name                       = "Workload"
       + parent_management_group_id = (known after apply)
       + subscription_ids           = (known after apply)
+    }
+
+  # module.mangmet_groups_first_level["Exporatory"].module.policy["Policy26"].azurerm_management_group_policy_assignment.example will be created
+  + resource "azurerm_management_group_policy_assignment" "example" {
+      + enforce              = true
+      + id                   = (known after apply)
+      + management_group_id  = (known after apply)
+      + metadata             = (known after apply)
+      + name                 = "Policy26-assignment"
+      + policy_definition_id = (known after apply)
+    }
+
+  # module.mangmet_groups_first_level["Exporatory"].module.policy["Policy26"].azurerm_policy_definition.example will be created
+  + resource "azurerm_policy_definition" "example" {
+      + display_name          = "Policy26"
+      + id                    = (known after apply)
+      + management_group_id   = (known after apply)
+      + management_group_name = (known after apply)
+      + metadata              = (known after apply)
+      + mode                  = "All"
+      + name                  = "Policy26"
+      + policy_rule           = jsonencode(
+            {
+              + something = "something"
+            }
+        )
+      + policy_type           = "Custom"
+    }
+
+  # module.mangmet_groups_first_level["Platform_T_S"].module.policy["Policy1"].azurerm_management_group_policy_assignment.example will be created
+  + resource "azurerm_management_group_policy_assignment" "example" {
+      + enforce              = true
+      + id                   = (known after apply)
+      + management_group_id  = (known after apply)
+      + metadata             = (known after apply)
+      + name                 = "Policy1-assignment"
+      + policy_definition_id = (known after apply)
+    }
+
+  # module.mangmet_groups_first_level["Platform_T_S"].module.policy["Policy1"].azurerm_policy_definition.example will be created
+  + resource "azurerm_policy_definition" "example" {
+      + display_name          = "Policy1"
+      + id                    = (known after apply)
+      + management_group_id   = (known after apply)
+      + management_group_name = (known after apply)
+      + metadata              = (known after apply)
+      + mode                  = "All"
+      + name                  = "Policy1"
+      + policy_rule           = jsonencode(
+            {
+              + something = "something"
+            }
+        )
+      + policy_type           = "Custom"
     }
 
   # module.mangmet_groups_first_level["Platform_T_S"].module.subscrption["Platform_NonProd"].azurerm_management_group_subscription_association.this will be created
@@ -128,6 +182,87 @@ Terraform planned the following actions, but then encountered a problem:
       + result = (known after apply)
     }
 
+  # module.mangmet_groups_first_level["Policy_staging"].module.policy["Policy24"].azurerm_management_group_policy_assignment.example will be created
+  + resource "azurerm_management_group_policy_assignment" "example" {
+      + enforce              = true
+      + id                   = (known after apply)
+      + management_group_id  = (known after apply)
+      + metadata             = (known after apply)
+      + name                 = "Policy24-assignment"
+      + policy_definition_id = (known after apply)
+    }
+
+  # module.mangmet_groups_first_level["Policy_staging"].module.policy["Policy24"].azurerm_policy_definition.example will be created
+  + resource "azurerm_policy_definition" "example" {
+      + display_name          = "Policy24"
+      + id                    = (known after apply)
+      + management_group_id   = (known after apply)
+      + management_group_name = (known after apply)
+      + metadata              = (known after apply)
+      + mode                  = "All"
+      + name                  = "Policy24"
+      + policy_rule           = jsonencode(
+            {
+              + something = "something"
+            }
+        )
+      + policy_type           = "Custom"
+    }
+
+  # module.mangmet_groups_first_level["Suspended"].module.policy["Policy25"].azurerm_management_group_policy_assignment.example will be created
+  + resource "azurerm_management_group_policy_assignment" "example" {
+      + enforce              = true
+      + id                   = (known after apply)
+      + management_group_id  = (known after apply)
+      + metadata             = (known after apply)
+      + name                 = "Policy25-assignment"
+      + policy_definition_id = (known after apply)
+    }
+
+  # module.mangmet_groups_first_level["Suspended"].module.policy["Policy25"].azurerm_policy_definition.example will be created
+  + resource "azurerm_policy_definition" "example" {
+      + display_name          = "Policy25"
+      + id                    = (known after apply)
+      + management_group_id   = (known after apply)
+      + management_group_name = (known after apply)
+      + metadata              = (known after apply)
+      + mode                  = "All"
+      + name                  = "Policy25"
+      + policy_rule           = jsonencode(
+            {
+              + something = "something"
+            }
+        )
+      + policy_type           = "Custom"
+    }
+
+  # module.mangmet_groups_first_level["Workload"].module.policy["Policy23"].azurerm_management_group_policy_assignment.example will be created
+  + resource "azurerm_management_group_policy_assignment" "example" {
+      + enforce              = true
+      + id                   = (known after apply)
+      + management_group_id  = (known after apply)
+      + metadata             = (known after apply)
+      + name                 = "Policy23-assignment"
+      + policy_definition_id = (known after apply)
+    }
+
+  # module.mangmet_groups_first_level["Workload"].module.policy["Policy23"].azurerm_policy_definition.example will be created
+  + resource "azurerm_policy_definition" "example" {
+      + display_name          = "Policy23"
+      + id                    = (known after apply)
+      + management_group_id   = (known after apply)
+      + management_group_name = (known after apply)
+      + metadata              = (known after apply)
+      + mode                  = "All"
+      + name                  = "Policy23"
+      + policy_rule           = jsonencode(
+            {
+              + something = "something"
+            }
+        )
+      + policy_type           = "Custom"
+    }
+
   # module.mangmet_groups_second_level["Non_Prod"].module.subscrption["Commercial"].azurerm_subscription.this will be created
   + resource "azurerm_subscription" "this" {
       + alias             = (known after apply)
@@ -188,7 +323,7 @@ Terraform planned the following actions, but then encountered a problem:
       + result = (known after apply)
     }
 
-Plan: 22 to add, 0 to change, 0 to destroy.
+Plan: 32 to add, 0 to change, 0 to destroy.
 
 Changes to Outputs:
   + local = {
@@ -221,7 +356,7 @@ Changes to Outputs:
 ╷
 │ Error: Management Group "Workload" was not found
 │
-│   with module.mangmet_groups_second_level["SandBox"].data.azurerm_management_group.mangment_group_id,
+│   with module.mangmet_groups_second_level["Prod"].data.azurerm_management_group.mangment_group_id,
 │   on modules/mangment_groups_parrent/data.tf line 1, in data "azurerm_management_group" "mangment_group_id":
 │    1: data "azurerm_management_group" "mangment_group_id" {
 │
@@ -229,7 +364,7 @@ Changes to Outputs:
 ╷
 │ Error: Management Group "Workload" was not found
 │
-│   with module.mangmet_groups_second_level["Prod"].data.azurerm_management_group.mangment_group_id,
+│   with module.mangmet_groups_second_level["SandBox"].data.azurerm_management_group.mangment_group_id,
 │   on modules/mangment_groups_parrent/data.tf line 1, in data "azurerm_management_group" "mangment_group_id":
 │    1: data "azurerm_management_group" "mangment_group_id" {
 │
