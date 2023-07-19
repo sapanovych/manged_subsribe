@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "terraform",
+            "scheme": "file",
+            "pattern": "modules/mangment_groups/vars.tf"
+        }
+    ]
+}
