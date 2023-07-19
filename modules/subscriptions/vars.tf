@@ -1,6 +1,6 @@
-variable "mangment_group_ids" {
-    type = map(string)
+variable "subscription_name" {
+  type = string
 }
-variable "subscriptions_list" {
-  type = map(map(string))
+variable "mangment_group_id" {
+  type = string
 }

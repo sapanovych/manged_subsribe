@@ -1,17 +1,12 @@
+resource "random_uuid" "this" {
+}
+
 resource "azurerm_subscription" "this" {
-
-for_each = to_set() 
-  
-  subscription_name = local.name_from_descriptor
-  alias             = local.name_from_descriptor
-
-  billing_scope_id = one(data.azurerm_billing_enrollment_account_scope.this.*.id)
-
-  tags = module.this.tags
+  subscription_name = var.subscription_name
+  subscription_id = random_uuid.this.result
 }
 
 resource "azurerm_management_group_subscription_association" "this" {
-
-  management_group_id = var.management_group_id
-  subscription_id     = local.subscription_resource_id
+  management_group_id = var.mangment_group_id
+  subscription_id     = azurerm_subscription.this.id
 }
