@@ -1,11 +1,7 @@
-#resource "azurerm_subscription" "example" {
-#  for_each = toset(var.subscription_list)
-#  subscription_name = each.key
-#  subscription_id = each.key
-#}
 resource "azurerm_management_group" "mgmt_group" {
   display_name = var.mangment_group 
   name = var.mangment_group 
+  parent_management_group_id = data.azurerm_management_group.mangment_group_id
 }
 
 module "subscrption" {
@@ -16,9 +12,10 @@ module "subscrption" {
 }
 
 module "policy" {
-  source = "../../modules/mangment_policy"
+  source = "../../modules/policy"
   for_each = var.managment_policy
-  policy_value = each.value.policy_value
+  policy_file = each.value.policy_file
   policy_name = each.value.policy_name
+  is_mngmt = true
   managment_group_id = azurerm_management_group.mgmt_group.id
 }

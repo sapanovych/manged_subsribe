@@ -1,4 +1,4 @@
 output "local" {
-    value = local.management_groups_second_level
+  value = local.user_data.properties.metadata
 }
 

@@ -5,10 +5,16 @@ variable "mangment_group"{
 variable "subscription_list" {
   type = list(string)
   description = "List subscrtions - only names. UUID generated automatically."
+  default = []
 }
 
-variable "parrent_name" {
+variable "parent_name" {
   type = string
   default = "nonid"
   description = "Name of the parent management group"
+}
+
+variable "managment_policy" {
+  type = map(map(string))
+  default = {}
 }
